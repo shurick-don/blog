@@ -1,0 +1,85 @@
+<!doctype html>
+{% load static %}
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport"content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!--
+	 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+	<link type="text/css" href="static/blog/style.css" rel="stylesheet"/>
+--> 
+
+	{% load django_bootstrap5 %}
+  	{% bootstrap_css %}
+  	{% bootstrap_javascript %}
+
+<title>Shuric-WWW</title>
+</head>
+
+<body>
+
+    <div class="container p-5 my-3 bg-primary text-white">
+		<h1><p class="text-center">Найди себе дело по душе и тебе не придется трудиться ни одного дня в жизни.</p></h1>
+	</div>	
+
+<!-- Navbar -->
+
+<div class="container">
+	<nav class="navbar navbar-expand-lg bg-body-tertiary">
+	  <div class="container-fluid">
+	    <a class="navbar-brand" href="#">Навбар</a>
+	    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации">
+	      <span class="navbar-toggler-icon"></span>
+	    </button>
+	    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+	      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+	        <li class="nav-item">
+	          <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Главная</a>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link" href="{% url 'bootstrap' %}">Botstrap</a>
+	        </li>
+	        <li class="nav-item dropdown">
+	          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+	            Выпадающий список
+	          </a>
+	          <ul class="dropdown-menu">
+	            <li><a class="dropdown-item" href="#">Действие</a></li>
+	            <li><a class="dropdown-item" href="{% url 'contact'%}">Контакты</a></li>
+	            <li><hr class="dropdown-divider"></li>
+	            <li><a class="dropdown-item" href="{% url 'about'%}">О нас</a></li>
+	          </ul>
+	        </li>
+	        <li class="nav-item">
+	          <a class="nav-link disabled">Отключенная</a>
+	        </li>
+	      </ul>
+	      <form class="d-flex" role="search">
+	        <input class="form-control me-2" type="search" placeholder="Поиск" aria-label="Поиск">
+	        <button class="btn btn-outline-success" type="submit">Поиск</button>
+	      </form>
+	    </div>
+	  </div>
+	</nav>
+</div>
+<!-- Navbar -->
+
+	{% block leftbar %}
+	{% endblock leftbar %}
+
+
+
+	{% block content %}
+	{% endblock content %}
+
+
+
+	{% block Rightbar %}
+	{% endblock Rightbar %}
+
+
+</body>
+</html>
+

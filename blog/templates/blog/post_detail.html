@@ -1,0 +1,37 @@
+{% extends "blog/base.html" %}
+
+
+{% block content %}  
+<div class="container">               
+	<div class="card text-center">
+  		<div class="card-body">
+    		<h5 class="card-title">{{ post.title }}</a></h5>
+    		{% if post.photo %}
+  				<img src="{{ post.photo.url }}" class="mx-auto d-block" width="1000" height="500" alt="...">
+  			{% endif %} 
+    			<p class="card-text text-start">{{ post.content }}</p>   
+  			<div class="card-footer">
+    		Дата создания поста: {{ post.created_at }}
+  			</div>
+  			<a href="{% url 'home' %}" class="btn btn-primary ">На главную</a>
+  		</div>
+	</div>
+</div>
+{% endblock content %}
+
+
+<!--
+
+   <div class="container ">
+	{% if post.photo %}
+ <img src="{{ post.photo.url }}" class="mx-auto d-block" width="1000" height="500" alt="Cinque Terre"> 
+  	{% endif %}
+<p><h3>Заголовок: {{ post.title }}</h3></p>
+{{ post.content }}
+<br>
+Дата создания поста: {{ post.created_at }}
+<br>
+<a  href="{% url 'home' %}" class="btn btn-success">Вернутся на главную</a>
+</div>
+ -->
+
