@@ -1,5 +1,5 @@
 {% extends "blog/base.html" %}
-
+{% load static %}
 
 {% block content %}
 <div class="container">
@@ -17,8 +17,14 @@
 		<a href="{{ post.get_absolute_url }}" class="btn btn-primary stretched-link">Подробней</a>
 		</div>
 	</div>
-{% endfor %}
-</div>
+	{% endfor %}
+
+
 {% endblock content %}
 
+{% block navigation %}
 
+{% include "pagination.html" %}
+
+{% endblock %}
+<br>

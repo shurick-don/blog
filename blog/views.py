@@ -8,10 +8,8 @@ def index(request):
     return render(request, 'blog/bootstrap.html', {'post': post})
 
 class PostList(ListView):
-    
-    def get_queryset(self):
-        return Post.objects.all()[5:]
-
+    model = Post
+    paginate_by = 3
 
 
 class PostDetailView(DetailView):
