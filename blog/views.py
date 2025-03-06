@@ -3,9 +3,11 @@ from django.views.generic import ListView, DetailView
 
 from .models import Post
 
+
 def index(request):
     post = Post.objects.all().first()
-    return render(request, 'blog/bootstrap.html', {'post': post})
+    return render(request, "blog/bootstrap.html", {"post": post})
+
 
 class PostList(ListView):
     model = Post
@@ -15,3 +17,6 @@ class PostList(ListView):
 class PostDetailView(DetailView):
     model = Post
 
+
+def get_rubric(request):
+    pass
