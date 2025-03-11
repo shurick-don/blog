@@ -40,17 +40,16 @@
 	          <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Главная</a>
 	        </li>
 	        <li class="nav-item">
-	          <a class="nav-link" href="{% url 'bootstrap' %}">Botstrap</a>
+	          <a class="nav-link" href="{% url "about" %}">Портфолио</a>
 	        </li>
 	        <li class="nav-item dropdown">
 	          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-	            Выпадающий список
+	            Варианты размещения
 	          </a>
 	          <ul class="dropdown-menu">
-	            <li><a class="dropdown-item" href="#">Действие</a></li>
-	            <li><a class="dropdown-item" href="{% url 'contact'%}">Контакты</a></li>
-	            <li><hr class="dropdown-divider"></li>
-	            <li><a class="dropdown-item" href="{% url 'about'%}">О нас</a></li>
+	            <li><a class="dropdown-item" href="{% url 'single_post' %}">Одиночный пост</a></li>
+	            <li><a class="dropdown-item" href="{% url 'left_post' %}">Картинка слева</a></li>
+	            <li><a class="dropdown-item" href="{% url 'three_post' %}">Три поста в строке</a></li>
 	          </ul>
 	        </li>
 	        <li class="nav-item">
@@ -65,23 +64,16 @@
 	  </div>
 	</nav>
 </div>
-<!-- Navbar -->
-
-	{% block leftbar %}
-	{% endblock leftbar %}
+	<!-- Navbar -->
 
 
+			{% block content %}
+			{% endblock content %}
+			
 
-	{% block content %}
-	{% endblock content %}
+		
 
-
-
-	{% block Rightbar %}
-	{% endblock Rightbar %}
-
-	{% block navigation %}
-	{% endblock %}
+			{% include "pagination.html" %}
 
 </body>
 </html>

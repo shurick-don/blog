@@ -14,7 +14,10 @@ urlpatterns = [
         ),
         name="contact",
     ),
-    path("bootstrap/", index, name="bootstrap"),
+    # path("post/<str:name_template>/", single_post, name="post_temp"),
+    path("single_post/", SinglPostList.as_view(), name="single_post"),
+    path("left_post/", LeftSinglPostList.as_view(), name="left_post"),
+    path("three_post/", ThreePostList.as_view(), name="three_post"),
     path("<str:slug>/", PostDetailView.as_view(), name="post"),
-    path("rubric/<int:pk>", get_rubric, name="rubric"),
+    path("rubric/<int:pk>", ArticleByCategoryListView.as_view(), name="rubric"),
 ]
