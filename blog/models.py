@@ -13,7 +13,7 @@ class Rubric(MPTTModel):
         return self.name
 
     def get_absolute_url(self):
-        return reverse("rubric", kwargs={"pk": self.pk})
+        return reverse("blog:rubric", kwargs={"pk": self.pk})
 
     class MPTTMeta:
         order_insertion_by = ["name"]
@@ -67,7 +67,7 @@ class Post(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse("post", kwargs={"slug": self.slug})
+        return reverse("blog:post", kwargs={"slug": self.slug})
 
     class Meta:
         verbose_name = "Статья(ю)"

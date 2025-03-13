@@ -3,6 +3,8 @@ from django.views.generic import TemplateView
 
 from .views import *
 
+app_name = "blog"
+
 urlpatterns = [
     path("", PostList.as_view(), name="home"),
     path("about/", TemplateView.as_view(template_name="blog/about.html"), name="about"),
