@@ -1,7 +1,12 @@
 {% extends "blog/base.html" %}
 {% load static %}
 
+
+
 {% block content %}
+
+
+
 <div class="container">
 
     <div class="row">
@@ -10,7 +15,11 @@
         <div class="col-md-9">
 
             {% for post in posts %}
-            <!--placeholder-->     
+            
+            <h2>
+                {{ post.category }}  
+            </h2>                
+            
             <div class="card border-primary mb-3">
                 <img src="{{ post.photo.url }}" class="card-img-top" alt="Фото карточки">
 

@@ -5,5 +5,6 @@ from .views import *
 app_name = "main"
 
 urlpatterns = [
-path('', index, name='general'),
+    path("", index, name="general"),
+    path("pint/", pint, name="pint"),
 ]
