@@ -17,12 +17,25 @@ class LeftSinglPostList(ListView):
     context_object_name = "posts"
     paginate_by = 3
 
+    def get_queryset(self):
+        return Post.objects.filter(id__in=[1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+
 
 class ThreePostList(ListView):
     model = Post
     template_name = "blog/three_post.html"
     context_object_name = "posts"
     paginate_by = 9
+
+    def get_queryset(self):
+        return Post.objects.filter(id__in=[4, 7, 8, 9, 10, 13, 14, 15, 16])
+
+
+class GalleryPostList(ListView):
+    model = Post
+    template_name = "blog/gallery_post.html"
+    context_object_name = "posts"
+    # paginate_by = 9
 
 
 # def single_post(request):

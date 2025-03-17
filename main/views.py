@@ -7,6 +7,6 @@ def index(request):
     return render(request, "main/index.html")
 
 
-def pint(request):
-    posts = Post.objects.all()
-    return render(request, "main/pinlist.html", {"posts": posts})
+# def pint(request):
+#     posts = Post.objects.all()
+#     return render(request, "main/pinlist.html", {"posts": posts})
