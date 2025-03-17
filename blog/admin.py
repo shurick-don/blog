@@ -3,7 +3,7 @@ from django.utils.safestring import mark_safe
 from mptt.admin import DraggableMPTTAdmin
 
 
-from .models import Post, Category, Tag, Rubric
+from .models import Post, Category, Tag, Rubric, Image
 
 admin.site.register(
     Rubric,
@@ -63,6 +63,7 @@ class TagAdmin(admin.ModelAdmin):
 
 
 # admin.site.register(Rubric)
+admin.site.register(Image)
 admin.site.register(Post, PostAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Tag, TagAdmin)

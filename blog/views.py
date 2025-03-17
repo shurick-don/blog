@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 
-from .models import Post, Rubric
+from .models import Post, Rubric, Category, Image
 
 
 class SinglPostList(ListView):
@@ -78,6 +78,19 @@ class ArticleByCategoryListView(ListView):
         self.category = Rubric.objects.get(pk=self.kwargs["pk"])
         queryset = Post.objects.all().filter(category__pk=self.category.pk)
         return queryset
+
+
+class GalleryByCategoryListView(ListView):
+    pass
+    # model = Category
+    # template_name = "blog/gallery_post.html"
+    # context_object_name = "posts"
+    # category = None
+
+    # def get_queryset(self):
+    #     self.category = Category.objects.get(pk=self.kwargs["pk"])
+    #     queryset = Image.obj_img.all().filter(category__id=self.category.id)
+    #     return queryset
 
     # def get_context_data(self, *, object_list=None, **kwargs):
     #         context = super().get_context_data(**kwargs)
