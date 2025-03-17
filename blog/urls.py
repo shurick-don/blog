@@ -16,7 +16,6 @@ urlpatterns = [
         ),
         name="contact",
     ),
-    # path("post/<str:name_template>/", single_post, name="post_temp"),
     path("single_post/", SinglPostList.as_view(), name="single_post"),
     path("left_post/", LeftSinglPostList.as_view(), name="left_post"),
     path("three_post/", ThreePostList.as_view(), name="three_post"),
