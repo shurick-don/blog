@@ -85,15 +85,17 @@ class Image(models.Model):
     image = models.ImageField(
         upload_to="image", verbose_name="Файл с изображением", null=True, blank=True
     )
-    category = models.ForeignKey(Category, on_delete=models.PROTECT, null=True, blank=True)
+    category = models.ForeignKey(
+        Category, on_delete=models.PROTECT, null=True, blank=True
+    )
 
     obj_img = models.Manager()
 
     def __str__(self):
         return self.title
-    
-    # def get_absolute_url(self):
-    #     return reverse("blog:category", kwargs={"id": self.id})
+
+    def get_absolute_url(self):
+        return reverse("blog:category", kwargs={"id": self.id})
 
 
 class VideoFile(models.Model):

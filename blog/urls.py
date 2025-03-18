@@ -21,6 +21,7 @@ urlpatterns = [
     path("three_post/", ThreePostList.as_view(), name="three_post"),
     path("gallery_post/", GalleryPostList.as_view(), name="gallery_post"),
     path("<str:slug>/", PostDetailView.as_view(), name="post"),
-    path("rubric/<int:pk>", ArticleByCategoryListView.as_view(), name="rubric"),
-    path("category/<int:pk>", GalleryByCategoryListView.as_view(), name="category"),
+    path("rubric/<int:pk>/", ArticleByCategoryListView.as_view(), name="rubric"),
+    # path("category/<int:pk>/", GalleryByCategoryListView.as_view(), name="category"),
+    path("category/<int:pk>/", get_category, name="category"),
 ]

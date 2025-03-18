@@ -62,8 +62,9 @@ class PostDetailView(DetailView):
     model = Post
 
 
-def get_rubric(request):
-    pass
+def get_category(request, pk):
+    posts = Post.objects.filter(category__pk=pk)
+    return render(request, "blog/gallery_post.html", {"posts": posts})
 
 
 class ArticleByCategoryListView(ListView):
@@ -80,19 +81,19 @@ class ArticleByCategoryListView(ListView):
         return queryset
 
 
-class GalleryByCategoryListView(ListView):
-    pass
-    # model = Category
-    # template_name = "blog/gallery_post.html"
-    # context_object_name = "posts"
-    # category = None
+# class GalleryByCategoryListView(ListView):
+#     model = Post
+#     template_name = "blog/gallery_post.html"
+#     context_object_name = "post"
+#     category = None
 
-    # def get_queryset(self):
-    #     self.category = Category.objects.get(pk=self.kwargs["pk"])
-    #     queryset = Image.obj_img.all().filter(category__id=self.category.id)
-    #     return queryset
+#     def get_queryset(self):
+#         self.category = Category.objects.get(pk=self.kwargs["pk"])
+#         queryset = Post.objects.all().filter(category__pk=self.category.pk)
+#         return queryset
+# return Post.objects.filter(category__pk=self.kwargs['pk'])
 
-    # def get_context_data(self, *, object_list=None, **kwargs):
-    #         context = super().get_context_data(**kwargs)
-    #         context['rubric'] = self.get_upper(Category.objects.get(pk=self.kwargs['pk']))
-    #         return context
+# def get_context_data(self, *, object_list=None, **kwargs):
+#         context = super().get_context_data(**kwargs)
+#         context['rubric'] = self.get_upper(Category.objects.get(pk=self.kwargs['pk']))
+#         return context

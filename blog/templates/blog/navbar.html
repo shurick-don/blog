@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Навбар</a>
+      <a class="navbar-brand" href="{% url 'blog:gallery_post' %}">Навбар</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Переключатель навигации">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -11,7 +11,7 @@
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           {% for cat in cats %}
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">{{ cat.title }}</a>
+            <a class="nav-link active" aria-current="page" href="{% url 'blog:category' cat.pk %}">{{ cat.title }}</a>
           </li>        
           {% endfor %}
           
